@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviator Predictions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="prediction-box">
+            <div id="step1" class="step active">
+                <h2>Step 1: Enter Aviator Website</h2>
+                <input type="text" id="websiteInput" placeholder="Enter Aviator website URL">
+                <button onclick="verifyWebsite()">Connect</button>
+            </div>
+
+            <div id="step2" class="step">
+                <h2>Connecting to API</h2>
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+                <div id="connectionStatus">Initializing connection...</div>
+                <div class="loading-steps">
+                    <div id="step-connect" class="loading-step">⚪ Connecting to server...</div>
+                    <div id="step-verify" class="loading-step">⚪ Verifying connection...</div>
+                    <div id="step-secure" class="loading-step">⚪ Establishing secure channel...</div>
+                    <div id="step-final" class="loading-step">⚪ Finalizing connection...</div>
+                </div>
+            </div>
+
+            <div id="step3" class="step">
+                <h2>Step 3: Enter Username</h2>
+                <input type="text" id="usernameInput" placeholder="Enter your username">
+                <button onclick="verifyUsername()">Verify</button>
+            </div>
+
+            <div id="step3.5" class="step">
+                <h2>Verifying User</h2>
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+                <div id="userVerificationStatus">Verifying user credentials...</div>
+            </div>
+
+            <div id="step4" class="step">
+                <h2>Human Verification Required</h2>
+                <div class="verification-progress">
+                    <div class="progress-step active">1</div>
+                    <div class="progress-step">2</div>
+                    <div class="progress-step">3</div>
+                    <div class="progress-step">4</div>
+                    <div class="progress-line"></div>
+                </div>
+                <div class="verification-message">
+                    <i class="fas fa-shield-alt"></i>
+                    <p>Currently <span id="activeUsers">247</span> users are using our prediction tool right now.</p>
+                    <p>To prevent automated bots and maintain our 93.7% accuracy rate, we need to verify you're human.</p>
+                    <p class="encouraging-text">Our proprietary algorithm analyzes over 5,000 game patterns every second to predict the exact crash point with unmatched precision. You're just one step away from joining our community of consistent winners!</p>
+                </div>
+                <div class="verification-task">
+                    <p>Complete this simple task to continue:</p>
+                    <div class="captcha-container">
+                        <div id="captchaQuestion">What is 7 + 4?</div>
+                        <input type="text" id="captchaInput" placeholder="Enter your answer">
+                    </div>
+                </div>
+                <button onclick="verifyHuman()">Verify</button>
+            </div>
+
+            <div id="step4.1" class="step">
+                <h2>Step 1: Join Our Exclusive Telegram Channel</h2>
+                <div class="verification-progress">
+                    <div class="progress-step completed">1</div>
+                    <div class="progress-step active">2</div>
+                    <div class="progress-step">3</div>
+                    <div class="progress-step">4</div>
+                    <div class="progress-line"></div>
+                </div>
+                <div class="verification-message">
+                    <i class="fab fa-telegram"></i>
+                    <p>Join our private Telegram channel where members are reporting <span class="highlight-text">daily profits of $500-$2,000</span> using our prediction system.</p>
+                    <p>Our team of ex-casino developers shares real-time insights and secret patterns that casinos don't want you to know.</p>
+                    <a href="https://t.me/traderdalchand" target="_blank" class="telegram-button">
+                        <i class="fab fa-telegram"></i> Join VIP Telegram Channel
+                    </a>
+                </div>
+                <div class="verification-task">
+                    <p class="encouraging-text">Unlike other prediction tools that rely on random guessing, our algorithm uses advanced mathematical models that have been proven to work since 2021 with over 27,000 successful predictions!</p>
+                    <p>After joining, click the button below to continue:</p>
+                </div>
+                <button onclick="confirmTelegram()">I've Joined the VIP Channel</button>
+            </div>
+
+            <div id="step4.2" class="step">
+                <h2>Step 2: Set Up Your Trading Account</h2>
+                <div class="verification-progress">
+                    <div class="progress-step completed">1</div>
+                    <div class="progress-step completed">2</div>
+                    <div class="progress-step active">3</div>
+                    <div class="progress-step">4</div>
+                    <div class="progress-line"></div>
+                </div>
+                <div class="verification-message">
+                    <i class="fas fa-user-plus"></i>
+                    <p>Our prediction system is specifically calibrated for the Quotex platform to ensure <span class="highlight-text">maximum accuracy and profit potential</span>.</p>
+                    <p>We've tested our algorithm on all platforms, and Quotex consistently delivers the best results due to its unique payout structure.</p>
+                    <a href="https://broker-qx.pro/sign-up/?lid=1250361" target="_blank" class="quotex-button">
+                        <i class="fas fa-external-link-alt"></i> Create Verified Quotex Account
+                    </a>
+                </div>
+                <div class="verification-task">
+                    <p class="encouraging-text">Our members who follow the system precisely report winning 9 out of 10 trades on average. The platform you use matters - we've optimized our prediction engine specifically for Quotex's algorithm.</p>
+                    <p>After creating your account, click continue:</p>
+                </div>
+                <button onclick="confirmQuotex()">I've Created My Quotex Account</button>
+            </div>
+
+            <div id="step4.3" class="step">
+                <h2>Step 3: Activate Prediction Access</h2>
+                <div class="verification-progress">
+                    <div class="progress-step completed">1</div>
+                    <div class="progress-step completed">2</div>
+                    <div class="progress-step completed">3</div>
+                    <div class="progress-step active">4</div>
+                    <div class="progress-line"></div>
+                </div>
+                <div class="verification-message">
+                    <i class="fas fa-dollar-sign"></i>
+                    <p>Deposit a minimum of $40 to your Quotex account to activate our premium prediction algorithm.</p>
+                    <p>This one-time verification ensures that only serious traders gain access to our system. Most members recoup this initial deposit within their first 30 minutes of trading.</p>
+                    <p class="encouraging-text">Our top users started with just $40 and have grown their accounts to over $5,000 in less than a month by following our precise predictions. The minimum deposit is required to unlock the full potential of our system.</p>
+                </div>
+                <div class="verification-task">
+                    <p>After making your deposit, click continue to unlock your access:</p>
+                </div>
+                <button onclick="confirmDeposit()">I've Activated My Account</button>
+            </div>
+
+            <div id="step4.4" class="step">
+                <h2>Final Step: Unlock Your Exclusive Access</h2>
+                <div class="verification-progress">
+                    <div class="progress-step completed">1</div>
+                    <div class="progress-step completed">2</div>
+                    <div class="progress-step completed">3</div>
+                    <div class="progress-step completed">4</div>
+                    <div class="progress-line completed"></div>
+                </div>
+                <div class="verification-message">
+                    <i class="fas fa-key"></i>
+                    <p>Congratulations! You've completed all requirements and are now eligible for our premium prediction system.</p>
+                    <p>To finalize your access, DM our verification specialist with your <span class="highlight-text">Quotex ID</span> to receive your personal activation key:</p>
+                    <div class="admin-contact">
+                        <i class="fab fa-telegram"></i> <span id="adminUsername">@binarygodsupport</span>
+                        <button onclick="copyAdminUsername()" class="copy-button">Copy Username</button>
+                    </div>
+                    <p class="encouraging-text">Members who verify their accounts within 10 minutes receive bonus access to our "Double-Up Strategy" guide that turns small wins into massive profits. Send your Quotex ID now to secure your spot!</p>
+                </div>
+                <div class="verification-task">
+                    <p class="instruction-text">After receiving your personal activation key from our specialist, enter it below:</p>
+                    <input type="text" id="secretKeyInput" placeholder="Enter your secret access key">
+                    <div class="key-verification-progress">
+                        <div class="progress-container" style="display: none;">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <div id="keyVerificationStatus"></div>
+                    </div>
+                </div>
+                <button onclick="verifySecretKey()">Activate Prediction Tool</button>
+            </div>
+
+            <div id="step5" class="step">
+                <div class="logo-section">
+                    <div class="airplane-logo">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h1>Aviator Prediction System <span class="premium-badge">PREMIUM</span></h1>
+                </div>
+
+                <div class="status-info">
+                    <div class="status-row">
+                        <span class="status-label">Server Status:</span>
+                        <span class="status-value">
+                            <span class="status-dot online"></span>
+                            Algorithm Active
+                        </span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">Active Users:</span>
+                        <span class="status-value" id="onlineUsers">...</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">Algorithm Version:</span>
+                        <span class="status-value">v4.7.2 <span class="update-badge">UPDATED</span></span>
+                    </div>
+                </div>
+
+                <div class="connection-info">
+                    <div class="info-item">
+                        <span class="info-label">Data Stream:</span>
+                        <span class="info-value" id="apiStatus">Synchronizing with servers...</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Account:</span>
+                        <span class="info-value" id="usernameDisplay">Authenticating...</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Session:</span>
+                        <span class="info-value live-badge">LIVE</span>
+                    </div>
+                </div>
+
+                <div class="algorithm-info">
+                    <p class="info-text">Our algorithm is analyzing crash patterns and calculating the next profitable entry point...</p>
+                </div>
+
+                <div class="predictions">
+                    <div class="prediction-header">NEXT CRASH POINT PREDICTION:</div>
+                    <div class="prediction-display" id="predictionDisplay"></div>
+                    <p class="prediction-accuracy">Accuracy rate: <span class="accuracy-value">93.7%</span></p>
+                    <button id="startButton" onclick="startPrediction()" class="start-button">GENERATE PREDICTION</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
